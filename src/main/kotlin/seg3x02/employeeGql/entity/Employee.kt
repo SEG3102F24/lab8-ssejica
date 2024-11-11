@@ -2,16 +2,17 @@ package seg3x02.employeeGql.entity
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
+import java.util.UUID
 
 @Document(collection = "employee")
 data class Employee(
-        val name: String,
-        val dateOfBirth: String,
-        val city: String,
-        val salary: Float,
-        val gender: String?,
-        val email: String?
+    var name: String,
+    var dateOfBirth: String,
+    var city: String,
+    var salary: Float,
+    var gender: String?,
+    var email: String?
 ) {
     @Id
-    var id: String = ""
+    var id: String = UUID.randomUUID().toString() 
 }
